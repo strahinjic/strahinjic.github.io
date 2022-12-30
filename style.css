@@ -1,0 +1,229 @@
+:root {
+  --red: #ff5e5b;
+  --red90: #ff5e5b90;
+  --pink: #ea638c;
+  --lighterpink: #f47c7a;
+  --lightpink: #f88574;
+  --green: #04a777;
+  --green90: #04a77790;
+  --teal: #467599;
+  --smokewhite: #f4edea;
+  --orange: #ff9569;
+  --yellow: #ffc145;
+  --yellow90: #ffc14590;
+  --white: #ffffff;
+  --white50: #ffffff50;
+  --text: #39393a;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: "Outfit", sans-serif;
+}
+body {
+  margin: 0;
+  color: var(--text);
+}
+#video {
+  visibility: hidden;
+  position: absolute;
+  top: 100px;
+  left: 0;
+}
+.music {
+  /* visibility: hidden; */
+  position: absolute;
+  z-index: 20;
+}
+.wrapper {
+  height: calc(100vh - 60px);
+  margin: 0;
+  position: relative;
+  padding: 10px;
+  background-color: var(--smokewhite);
+}
+#image,
+#drawing {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(50vw - 10px);
+  height: calc(100vh - 80px);
+  z-index: 0;
+  cursor: crosshair;
+}
+#drawing {
+  z-index: 1;
+}
+#logoCanvas {
+  display: none;
+}
+.picture-bg {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: calc(50vw - 10px);
+  height: calc(100vh - 80px);
+  background-color: var(--white50);
+  z-index: 0;
+}
+#container {
+  position: relative;
+  z-index: 1;
+}
+#container canvas {
+  cursor: default;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: grab;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  background-color: var(--orange);
+}
+.navigation svg {
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+.navigation button {
+  margin-right: 10px;
+}
+.navigation .cider {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.navigation .cider.right {
+  justify-content: end;
+}
+.navigation .cider.right > *:first-child {
+  margin-right: auto;
+}
+#imageFromUnsplash.disabled {
+  pointer-events: none;
+  background-color: var(--white50);
+  cursor: wait;
+}
+.upload-image-label,
+button {
+  padding: 0 12px;
+  outline: 0;
+  border: 1px solid var(--white);
+  background-color: var(--lightpink);
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  height: 34px;
+}
+.upload-image-label:hover,
+button:hover {
+  background-color: var(--lighterpink);
+}
+.upload-image-label {
+  display: block;
+  text-align: center;
+  line-height: 32px;
+}
+input {
+  width: 0;
+  padding: 0;
+  font-size: 12px;
+  border: 0;
+  outline: 0;
+}
+input[type="file"] {
+  display: none;
+}
+input.expand {
+  width: 100%;
+  line-height: 32px;
+  border: 1px solid white;
+}
+.cider:not(.right) .action-group {
+  display: flex;
+  align-items: stretch;
+}
+.cider:not(.right) .action-group > * {
+  height: 34px;
+}
+.input-holder {
+  position: relative;
+}
+.input-holder .error-message {
+  display: none;
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  z-index: 2;
+  font-size: 20px;
+  cursor: help;
+}
+.input-holder .error-message:hover ~ .error-details {
+  display: block;
+}
+.error-details {
+  display: none;
+  padding: 0 10px;
+  height: 36px;
+  position: absolute;
+  bottom: -40px;
+  right: -2px;
+  z-index: 1;
+  background-color: var(--red);
+  line-height: 34px;
+  color: var(--white);
+  font-size: 15px;
+  font-style: italic;
+  text-align: center;
+  border-radius: 20px;
+}
+.error-details::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 11px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--red);
+  z-index: 30;
+}
+#takePhotoBtn {
+  display: none;
+}
+#saveBtn,
+#undoBtn,
+#clearAllBtn {
+  display: none;
+  background-color: var(--green90);
+  border: 1px solid white;
+}
+#undoBtn {
+  background-color: var(--yellow90);
+}
+#clearAllBtn {
+  background-color: var(--red90);
+}
+#saveBtn:hover {
+  background-color: var(--green);
+}
+#undoBtn:hover {
+  background-color: var(--yellow);
+}
+#clearAllBtn:hover {
+  background-color: var(--red);
+}

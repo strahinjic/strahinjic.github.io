@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&#391;&#422;opp&#611;A&#422;t</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navigation">
+      <div class="cider">
+        <svg
+          id="logo"
+          version="1.1"
+          viewBox="0 0 50 50"
+          width="50px"
+          height="50px"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xml:space="preserve"
+          font-family="Outfit, sans-serif"
+        >
+          <defs></defs>
+          <rect width="50" height="50" fill="#467599" />
+        </svg>
+
+        <div>
+          <!-- <div class="music">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/5yx6BWlEVcY?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0&autoplay=1"
+            ></iframe>
+          </div> -->
+        </div>
+
+        <div class="action-group">
+          <button id="imageFromUnsplash">Add Random Image</button>
+          <button id="takePhotoBtn" onclick="takePhoto()">Take photo</button>
+          <div class="input-holder">
+            <input id="imageFromLink" type="text" />
+            <span class="error-message">&#x1F644;</span>
+            <span class="error-details">Valid link needed, tnx.</span>
+          </div>
+          <button onclick="expandImageFromLink()">Add image via URL</button>
+          <div class="input-holder">
+            <label for="imageFromUpload" class="upload-image-label"
+              >Upload Image</label
+            >
+            <input id="imageFromUpload" type="file" accept="image/*" />
+          </div>
+        </div>
+      </div>
+      <div class="cider right">
+        <button id="saveBtn" onclick="save()">Save picture</button>
+        <button id="undoBtn" onclick="undo()">Undo selection</button>
+        <button id="clearAllBtn" onclick="clearAll()">Clear all</button>
+      </div>
+    </div>
+    <div class="wrapper">
+      <canvas id="image"></canvas>
+      <canvas id="drawing"></canvas>
+      <canvas id="logoCanvas" width="500" height="500"></canvas>
+      <div id="container"></div>
+      <div class="picture-bg"></div>
+    </div>
+    <div id="video"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
