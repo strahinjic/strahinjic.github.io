@@ -1,7 +1,7 @@
 const drawingCanvas = document.getElementById("drawing");
 const sourceImage = document.getElementById("image");
-const ctxdrw = drawingCanvas.getContext("2d");
-const ctximg = sourceImage.getContext("2d");
+const ctxdrw = drawingCanvas.getContext("2d", { willReadFrequently: true });
+const ctximg = sourceImage.getContext("2d", { willReadFrequently: true });
 const rgbWordArray = ["a", "b", "c", "d", "e", "f"];
 
 var canvasPieces;
@@ -217,7 +217,7 @@ function saveLogo() {
     var svgString = new XMLSerializer().serializeToString(logoEl);
 
     var canvas = document.getElementById("logoCanvas");
-    var ctx = canvas.getContext("2d");
+    var ctx = canvas.getContext("2d", { willReadFrequently: true });
     ctx.fillStyle = "#467599";
     ctx.filter = "blur(" + randomN(5, 1) + "px)";
     ctx.fillRect(0, 0, 500, 500);
@@ -430,7 +430,7 @@ function copyCropped() {
   var newCanvas = document.createElement("canvas");
   pictureWrapper.appendChild(newCanvas);
 
-  var ctxnc = newCanvas.getContext("2d");
+  var ctxnc = newCanvas.getContext("2d", { willReadFrequently: true });
   ctxnc.canvas.width = window.innerWidth / 2;
   ctxnc.canvas.height = window.innerHeight;
 
@@ -576,7 +576,7 @@ function save() {
   var merger = document.createElement("canvas");
   merger.width = drawingCanvas.width; // sum of widths
   merger.height = drawingCanvas.height;
-  var ctx = merger.getContext("2d");
+  var ctx = merger.getContext("2d", { willReadFrequently: true });
   // iterate through all our strips
   elementsToMerge.forEach(function drawToMerger(el, i) {
     // simply draw at index * width
